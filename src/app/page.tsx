@@ -238,7 +238,10 @@ export default function Home() {
           </form>
 
           <section className="grid gap-6">
-            <article className="flex h-[36rem] min-h-0 flex-col rounded-3xl border border-white/10 bg-white p-6 text-slate-950 shadow-2xl shadow-slate-950">
+            <article
+              className="flex min-h-0 flex-col overflow-hidden rounded-3xl border border-white/10 bg-white p-6 text-slate-950 shadow-2xl shadow-slate-950"
+              style={{ height: "36rem", maxHeight: "36rem" }}
+            >
               <div className="flex items-center justify-between gap-4 border-b border-slate-200 pb-4">
                 <div>
                   <h2 className="text-xl font-semibold">Research report</h2>
