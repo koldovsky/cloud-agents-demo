@@ -272,10 +272,10 @@ export default function Home() {
                 </ul>
               </article>
               <article className="rounded-3xl border border-white/10 bg-slate-900/90 p-5">
-                <h2 className="font-semibold text-white">Reasoning stream</h2>
+                <h2 className="font-semibold text-white">Research notes</h2>
                 <p className="mt-4 max-h-48 overflow-auto whitespace-pre-wrap text-sm leading-6 text-slate-300">
                   {thinking ||
-                    "Thinking events from the Cursor SDK will appear here when the selected model emits them."}
+                    "Cursor SDK thinking events will appear here when the selected model exposes them."}
                 </p>
               </article>
             </div>

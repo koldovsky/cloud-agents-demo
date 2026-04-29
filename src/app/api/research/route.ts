@@ -62,6 +62,10 @@ function messageToEvents(message: SDKMessage): ResearchEvent[] {
         block.type === "text" ? [{ type: "text", text: block.text }] : [],
       );
     case "thinking":
+      if (message.text.includes("Cannot show a resolved agent reasoning stream")) {
+        return [];
+      }
+
       return [{ type: "thinking", text: message.text }];
     case "tool_call":
       return [
