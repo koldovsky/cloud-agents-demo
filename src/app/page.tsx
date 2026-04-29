@@ -252,7 +252,10 @@ export default function Home() {
                   </span>
                 ) : null}
               </div>
-              <div className="prose prose-slate mt-5 max-w-none flex-1 overflow-auto whitespace-pre-wrap pr-2 text-sm leading-7">
+              <div
+                data-testid="research-report"
+                className="prose prose-slate mt-5 max-w-none flex-1 overflow-auto whitespace-pre-wrap pr-2 text-sm leading-7"
+              >
                 {answer ||
                   "The research report will appear here as the Cursor agent streams its response."}
               </div>
