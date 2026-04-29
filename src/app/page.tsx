@@ -238,7 +238,7 @@ export default function Home() {
           </form>
 
           <section className="grid gap-6">
-            <article className="min-h-[28rem] rounded-3xl border border-white/10 bg-white p-6 text-slate-950 shadow-2xl shadow-slate-950">
+            <article className="flex h-[36rem] flex-col rounded-3xl border border-white/10 bg-white p-6 text-slate-950 shadow-2xl shadow-slate-950">
               <div className="flex items-center justify-between gap-4 border-b border-slate-200 pb-4">
                 <div>
                   <h2 className="text-xl font-semibold">Research report</h2>
@@ -252,7 +252,7 @@ export default function Home() {
                   </span>
                 ) : null}
               </div>
-              <div className="prose prose-slate mt-5 max-w-none whitespace-pre-wrap text-sm leading-7">
+              <div className="prose prose-slate mt-5 max-w-none flex-1 overflow-auto whitespace-pre-wrap pr-2 text-sm leading-7">
                 {answer ||
                   "The research report will appear here as the Cursor agent streams its response."}
               </div>
