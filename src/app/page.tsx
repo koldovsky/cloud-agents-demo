@@ -239,11 +239,10 @@ export default function Home() {
 
           <section
             data-testid="results-column"
-            className="grid gap-6"
+            className="grid gap-4 lg:h-[42rem] lg:grid-rows-[minmax(0,1fr)_auto]"
           >
             <article
               className="flex min-h-0 flex-col overflow-hidden rounded-3xl border border-white/10 bg-white p-6 text-slate-950 shadow-2xl shadow-slate-950"
-              style={{ height: "36rem", maxHeight: "36rem" }}
             >
               <div className="flex items-center justify-between gap-4 border-b border-slate-200 pb-4">
                 <div>
@@ -267,13 +266,13 @@ export default function Home() {
               </div>
             </article>
 
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="grid gap-4 md:grid-cols-2">
               <article
                 data-testid="agent-activity"
                 className="rounded-3xl border border-white/10 bg-slate-900/90 p-5"
               >
                 <h2 className="font-semibold text-white">Agent activity</h2>
-                <ul className="mt-4 max-h-48 space-y-3 overflow-auto text-sm text-slate-300">
+                <ul className="mt-4 max-h-28 space-y-3 overflow-auto text-sm text-slate-300">
                   {events.length ? (
                     events.map((item, index) => (
                       <li key={`${item}-${index}`}>{item}</li>
@@ -288,7 +287,7 @@ export default function Home() {
                 className="rounded-3xl border border-white/10 bg-slate-900/90 p-5"
               >
                 <h2 className="font-semibold text-white">Research notes</h2>
-                <p className="mt-4 max-h-48 overflow-auto whitespace-pre-wrap text-sm leading-6 text-slate-300">
+                <p className="mt-4 max-h-28 overflow-auto whitespace-pre-wrap text-sm leading-6 text-slate-300">
                   {thinking ||
                     "Cursor SDK thinking events will appear here when the selected model exposes them."}
                 </p>
