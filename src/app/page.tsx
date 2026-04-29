@@ -237,7 +237,10 @@ export default function Home() {
             ) : null}
           </form>
 
-          <section className="grid gap-6">
+          <section
+            data-testid="results-column"
+            className="grid gap-6"
+          >
             <article
               className="flex min-h-0 flex-col overflow-hidden rounded-3xl border border-white/10 bg-white p-6 text-slate-950 shadow-2xl shadow-slate-950"
               style={{ height: "36rem", maxHeight: "36rem" }}
@@ -265,7 +268,10 @@ export default function Home() {
             </article>
 
             <div className="grid gap-6 md:grid-cols-2">
-              <article className="rounded-3xl border border-white/10 bg-slate-900/90 p-5">
+              <article
+                data-testid="agent-activity"
+                className="rounded-3xl border border-white/10 bg-slate-900/90 p-5"
+              >
                 <h2 className="font-semibold text-white">Agent activity</h2>
                 <ul className="mt-4 max-h-48 space-y-3 overflow-auto text-sm text-slate-300">
                   {events.length ? (
@@ -277,7 +283,10 @@ export default function Home() {
                   )}
                 </ul>
               </article>
-              <article className="rounded-3xl border border-white/10 bg-slate-900/90 p-5">
+              <article
+                data-testid="research-notes"
+                className="rounded-3xl border border-white/10 bg-slate-900/90 p-5"
+              >
                 <h2 className="font-semibold text-white">Research notes</h2>
                 <p className="mt-4 max-h-48 overflow-auto whitespace-pre-wrap text-sm leading-6 text-slate-300">
                   {thinking ||
