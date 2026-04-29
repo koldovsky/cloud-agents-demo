@@ -40,6 +40,9 @@ export default function Home() {
   const [events, setEvents] = useState<string[]>([]);
   const [error, setError] = useState("");
   const [isRunning, setIsRunning] = useState(false);
+  const [runState, setRunState] = useState<"ready" | "live" | "done" | "error">(
+    "ready",
+  );
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -54,6 +57,7 @@ export default function Home() {
     setEvents([]);
     setError("");
     setIsRunning(true);
+    setRunState("live");
 
     try {
       const response = await fetch("/api/research", {
@@ -87,6 +91,7 @@ export default function Home() {
         }
       }
     } catch (caughtError) {
+      setRunState("error");
       setError(
         caughtError instanceof Error
           ? caughtError.message
@@ -133,6 +138,7 @@ export default function Home() {
         ]);
         return;
       case "done":
+        setRunState("done");
         setEvents((current) => [
           ...current,
           payload.durationMs
@@ -141,6 +147,7 @@ export default function Home() {
         ]);
         return;
       case "error":
+        setRunState("error");
         setError(payload.message);
         return;
     }
@@ -251,11 +258,9 @@ export default function Home() {
                     Streamed from Cursor SDK assistant messages.
                   </p>
                 </div>
-                {isRunning ? (
-                  <span className="rounded-full bg-cyan-100 px-3 py-1 text-xs font-medium text-cyan-800">
-                    Live
-                  </span>
-                ) : null}
+                <span className="rounded-full bg-cyan-100 px-3 py-1 text-xs font-medium capitalize text-cyan-800">
+                  {isRunning ? "live" : runState}
+                </span>
               </div>
               <div
                 data-testid="research-report"
